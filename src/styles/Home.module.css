@@ -276,3 +276,21 @@
     transform: rotate(0deg);
   }
 }
+
+.hostgrid {
+  display: inline-block;
+  padding: 10px;
+
+}
+.list {
+  list-style: none;
+}
+.hostimage {
+  border-radius: 10px;
+}
+.ratingspan {
+  color: red;
+  position: relative;
+    display: initial;
+    left: 50%;
+}
