@@ -1,6 +1,6 @@
 export const data = [
   {
-    location: 'AnyWhere, Baby',
+    location: 'Anywhere, Baby',
 		host: 'King Host: Robert',
 		price: 999999999999,
     rating: 5,

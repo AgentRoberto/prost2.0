@@ -3,19 +3,25 @@ import { Grid } from "@mui/material";
 import Image from 'next/image'
 import styles from 'api/styles/Home.module.css'
 import Link from "next/link";
+import { useRouter } from "next/router";
+/*import slug from "slug";*/
 
 export const HostGrid = (data: any) => {
   console.log('data ', data)
-  
+  const router = useRouter()
 
   return (
     <div>
       {data.data.map((e, i) => {
         return (
           <>
+          {console.log('e.slug ', e.slug)}
             <Grid className={styles.hostgrid} key={i}>
-            <Link href={`/profile/${e.slug}`}> 
-
+            <Link
+              href="/pages/profile/[organization]/Profile"
+              as={`/pages/profile/${router.query.organization}/Profile`}
+            >
+      
               <Grid xs={4}>
                 <Image
                   className={styles.hostimage}
@@ -26,8 +32,7 @@ export const HostGrid = (data: any) => {
                   priority
                 />
               </Grid>
-              </Link>
-
+              
               <Grid xs={4}>
                 {e.location}
                 <Grid className={styles.ratingspan}>
@@ -40,6 +45,7 @@ export const HostGrid = (data: any) => {
               <Grid xs={4}>
                 ${e.price}
               </Grid>
+              </Link>
           </Grid>
         </>
         )

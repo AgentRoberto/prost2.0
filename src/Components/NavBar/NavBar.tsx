@@ -3,6 +3,7 @@ import NavItem from "./NavItem";
 
 
 const MENU_LIST = [
+  { text: "Table App", href: "/"},
   { text: "Profile", href: "/profile" },
   { text: "Explore", href: "/explore" },
   { text: "Assets", href: "/assets" },

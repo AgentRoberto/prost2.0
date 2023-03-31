@@ -4,7 +4,7 @@ export default function explore() {
   
   return (
     <>
-      Explore
+      Explore test
     </>
   )
 }
