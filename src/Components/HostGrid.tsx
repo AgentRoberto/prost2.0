@@ -11,40 +11,38 @@ export const HostGrid = (data: any) => {
   return (
     <div>
       {data.data.map((e, i) => {
-        return (
-          <>
-            <Grid className={styles.hostgrid} key={i}>
-            <Link href={`/profile/${e.slug}`}> 
+        return <>
+          <Grid className={styles.hostgrid} key={i}>
+          <Link href={`/profile/${e.slug}`} legacyBehavior> 
 
-              <Grid xs={4}>
-                <Image
-                  className={styles.hostimage}
-                  src="/airbnb1.png"
-                  alt="Host Image"
-                  width={300}
-                  height={300}
-                  priority
-                />
-              </Grid>
-              </Link>
+            <Grid xs={4}>
+              <Image
+                className={styles.hostimage}
+                src="/airbnb1.png"
+                alt="Host Image"
+                width={300}
+                height={300}
+                priority
+              />
+            </Grid>
+            </Link>
 
-              <Grid xs={4}>
-                {e.location}
-                <Grid className={styles.ratingspan}>
-                  {e.rating} Stars
-                </Grid>
+            <Grid xs={4}>
+              {e.location}
+              <Grid className={styles.ratingspan}>
+                {e.rating} Stars
               </Grid>
-              <Grid xs={4}>
-                {e.host}
-              </Grid>
-              <Grid xs={4}>
-                ${e.price}
-              </Grid>
-          </Grid>
-        </>
-        )
+            </Grid>
+            <Grid xs={4}>
+              {e.host}
+            </Grid>
+            <Grid xs={4}>
+              ${e.price}
+            </Grid>
+        </Grid>
+      </>;
       })}
     </div>
-  )
+  );
 }
 
