@@ -1,15 +1,9 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import styles from 'api/styles/Home.module.css'
-import NavBar from 'api/Components/NavBar/NavBar'
 import {data} from './data'
-import { Grid } from '@mui/material'
 import { HostGrid } from 'api/Components/HostGrid'
 
-const inter = Inter({ subsets: ['latin'] })
-export default function Home() {
-
+export default function Home({ profiles }) {
   return (
     <>
       <Head>
@@ -19,32 +13,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-      <HostGrid data={data} />
+        <HostGrid data={profiles} />
       </main>
     </>
   )
 }
 
-/*
 export async function getStaticProps() {
-  const url = ''
-  let flights = ''
-  await fetch(url)
-    .then((res) => {
-      if (res.ok) {
-        return res.json()
-      } else {
-        return res.status
-      }
-    }).then((res) => {
-      flights = res.pools.map((e: any) => e.coins.map((e: { denom: any; }) => e.denom)).flat()
-    })
+  const profiles = data;
 
-  // By returning { props: { tokens } }, the Swap component
-  // will receive `tokens` as a prop at build time
   return {
-    props: {
-      flights,
-    },
-  }
-}*/
+    props: { profiles }
+  };
+}
