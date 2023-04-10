@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import NavItem from "./NavItem";
 
-
 const MENU_LIST = [
-  { text: "Profile", href: "/profile" },
+  { text: "Traveling Table", href: "/" },
+  { text: "My Profile", href: "/myprofile" },
   { text: "Explore", href: "/explore" },
   { text: "Assets", href: "/assets" },
 ];
